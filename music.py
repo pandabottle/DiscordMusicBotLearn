@@ -342,6 +342,27 @@ class music(commands.Cog):
             ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
             vc.play(ssource)
+    
+    @commands.command(name='idol',help='Super idol')
+    async def hades(self,ctx):
+        ctx.voice_client.stop() #stops previous song if it was playing it
+        FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn -t 13'}
+        YDL_OPTIONS={'format':'worstaudio'}
+        vc = ctx.voice_client
+
+        with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
+            """
+            info = ydl.extract_info(url,download=False)
+            url2=info['formats'][0]['url']
+            source = await discord.FFmpegOpusAudio.from_probe(url2,**FFMPEG_OPTIONS)
+            """
+            
+            urlboom='https://www.youtube.com/watch?v=HvUY80Dhgxo'
+            iinfo = ydl.extract_info(urlboom,download=False)
+            urlbm=iinfo['formats'][0]['url']
+            ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
+
+            vc.play(ssource)
 
 
 def setup(client):
