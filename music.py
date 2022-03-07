@@ -344,7 +344,7 @@ class music(commands.Cog):
             vc.play(ssource)
     
     @commands.command(name='idol',help='Super idol')
-    async def hades(self,ctx):
+    async def idol(self,ctx):
         ctx.voice_client.stop() #stops previous song if it was playing it
         FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn -t 13.49'}
         YDL_OPTIONS={'format':'worstaudio'}
