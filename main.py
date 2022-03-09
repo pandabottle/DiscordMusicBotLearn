@@ -6,16 +6,20 @@ from random import choice
 import os
 import music
 from dotenv import load_dotenv
+import sfx
 
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 
 cogs = [music]
-status = '!help to use me dipshit'
-client = commands.Bot(command_prefix='!')
+coggs = [sfx]
+status = '?help to use me dipshit'
+client = commands.Bot(command_prefix='?')
 
 class general(commands.Cog):
+    def __init__(self,client):
+        self.client = client
     @client.event
     async def on_ready():
         #change_status.start()
@@ -24,6 +28,7 @@ class general(commands.Cog):
 
     for i in range(len(cogs)):
         cogs[i].setup(client)
+        coggs[i].setup(client)
 
     @client.command(name='ping',help='Returns latency')
     async def ping(ctx):
