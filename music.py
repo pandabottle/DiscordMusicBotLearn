@@ -5,34 +5,40 @@ import youtube_dl
 class music(commands.Cog):
     def __init__(self,client):
         self.client = client
-    @commands.command(name='join',help='Type this to bring bot to your vc')
-    async def join(self,ctx):
-        if ctx.author.voice is None:    #if the person is not in a VC
+
+    @commands.command(name='play',help='play <your url here>')
+    async def play(self,ctx,url):
+        #First, we note down the VC the user and bot are in
+        voice_channel = ctx.author.voice.channel
+        voice = ctx.voice_client
+
+        if (voice_channel is None): #if user not in VC, send message
             await ctx.send("You're not in a VC")
-        voice_channel=ctx.author.voice.channel
-        if ctx.voice_client is None: #if bot is not in a VC
+        
+        if (voice is None):   #if bot not in vc, join the channel
             await voice_channel.connect()
         
-        else:
-            await ctx.voice_client.move_to(voice_channel)
+        if (voice is not None and voice.channel is not voice_channel):
+            print("aint there. Coming right now")
+            await voice.move_to(voice_channel)
+            voice = ctx.voice_client  #update the value
+
+        else:   #else it is already there
+            ctx.voice_client.stop() #stops previous song if it was playing it
+            FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
+            YDL_OPTIONS={'format':'bestaudio'}
+            vc = ctx.voice_client
+
+            with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
+                info = ydl.extract_info(url,download=False)
+                url2=info['formats'][0]['url']
+                source = await discord.FFmpegOpusAudio.from_probe(url2,**FFMPEG_OPTIONS)
+
+                vc.play(source)
     
     @commands.command(name='bye',help='disconnects bot from your vc')
     async def bye(self,ctx):
         await ctx.voice_client.disconnect()
-
-    @commands.command(name='play',help='Plays a song via play <your url here>')
-    async def play(self,ctx,url):
-        ctx.voice_client.stop() #stops previous song if it was playing it
-        FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
-        YDL_OPTIONS={'format':'bestaudio'}
-        vc = ctx.voice_client
-
-        with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
-            info = ydl.extract_info(url,download=False)
-            url2=info['formats'][0]['url']
-            source = await discord.FFmpegOpusAudio.from_probe(url2,**FFMPEG_OPTIONS)
-
-            vc.play(source)
     
     @commands.command(name='pause',help='pauses the current music')
     async def pause(self,ctx):
