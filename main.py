@@ -14,8 +14,8 @@ TOKEN = os.getenv("TOKEN")
 
 cogs = [music]
 coggs = [sfx]
-status = '!help to use me dipshit'
-client = commands.Bot(command_prefix='!')
+status = '*help to use me dipshit'
+client = commands.Bot(command_prefix='*')
 
 class general(commands.Cog):
     def __init__(self,client):
