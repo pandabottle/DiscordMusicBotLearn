@@ -27,6 +27,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -41,6 +42,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='chilling',help='Zhong Xina')
     async def chilling(self,ctx):
@@ -63,6 +67,8 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
+            
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -77,6 +83,9 @@ class Sfx(commands.Cog):
                 sssource = await discord.FFmpegOpusAudio.from_probe(urlbic,**FFMPEG_OPTIONS)
 
                 vc.play(sssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
         
     @commands.command(name='dog',help='what is it doin?')
     async def dog(self,ctx):
@@ -99,6 +108,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -113,6 +123,9 @@ class Sfx(commands.Cog):
                 sssource = await discord.FFmpegOpusAudio.from_probe(urlbic,**FFMPEG_OPTIONS)
 
                 vc.play(sssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
 
     @commands.command(name='sus',help='when the imposter')
     async def sus(self,ctx):
@@ -135,6 +148,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -149,6 +163,9 @@ class Sfx(commands.Cog):
                 sssource = await discord.FFmpegOpusAudio.from_probe(urlbic,**FFMPEG_OPTIONS)
 
                 vc.play(sssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
 
     @commands.command(name='fart',help='special fart')
     async def fart(self,ctx):
@@ -171,6 +188,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -185,6 +203,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='mad',help='why u haf to be mad')
     async def mad(self,ctx):
@@ -207,6 +228,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -221,6 +243,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='baby',help='Why are you baby?')
     async def baby(self,ctx):
@@ -243,6 +268,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -257,6 +283,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
 
     @commands.command(name='lag',help='Your internet')
     async def lag(self,ctx):
@@ -279,6 +308,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -293,6 +323,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='stopit',help='Just stop')
     async def stopit(self,ctx):
@@ -315,6 +348,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -329,6 +363,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
 
     @commands.command(name='bruh',help='bruh')
     async def bruh(self,ctx):
@@ -351,6 +388,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -365,6 +403,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='bs',help='What I am hearing from you')
     async def bs(self,ctx):
@@ -387,6 +428,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -401,6 +443,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
 
     @commands.command(name='throw',help='Flashbang out')
     async def throw(self,ctx):
@@ -423,6 +468,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -437,6 +483,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='ded',help='Dark Souls death')
     async def ded(self,ctx):
@@ -459,6 +508,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn'}
             YDL_OPTIONS={'format':'bestaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -473,6 +523,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
     
     @commands.command(name='hades',help='Hadeez nuts')
     async def hades(self,ctx):
@@ -495,6 +548,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn -t 5'}
             YDL_OPTIONS={'format':'worstaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -509,6 +563,9 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
         
     @commands.command(name='idol',help='Super idol')
     async def idol(self,ctx):
@@ -531,6 +588,7 @@ class Sfx(commands.Cog):
             FFMPEG_OPTIONS = {'before_options':'-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5','options':'-vn -t 13.49'}
             YDL_OPTIONS={'format':'worstaudio'}
             vc = ctx.voice_client
+            temp = 0
 
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 """
@@ -545,6 +603,10 @@ class Sfx(commands.Cog):
                 ssource = await discord.FFmpegOpusAudio.from_probe(urlbm,**FFMPEG_OPTIONS)
 
                 vc.play(ssource)
+            while (vc.is_playing()):
+                temp = 1
+            await ctx.voice_client.disconnect()
+    
 
 def setup(client):
     client.add_cog(Sfx(client))
